@@ -24,7 +24,9 @@ if ( !defined('ABSPATH') )
 
 error_reporting( E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR | E_USER_WARNING | E_RECOVERABLE_ERROR );
 
-if ( file_exists( ABSPATH . 'wp-config.php') ) {
+if ($GLOBALS['unit_testing']) {
+	// no action required as the bootstrap.php loads the variables required by wp-config.php
+} elseif ( file_exists( ABSPATH . 'wp-config.php') ) {
 
 	/** The config file resides in ABSPATH */
 	require_once( ABSPATH . 'wp-config.php' );
@@ -33,7 +35,7 @@ if ( file_exists( ABSPATH . 'wp-config.php') ) {
 
 	/** The config file resides one level above ABSPATH but is not part of another install*/
 	require_once( dirname(ABSPATH) . '/wp-config.php' );
-
+	
 } else {
 
 	// A config file doesn't exist

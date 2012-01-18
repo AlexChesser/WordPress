@@ -7,6 +7,8 @@
 			<filter>
 				<whitelist addUncoveredFilesFromWhitelist="true">
 					<file>../core/index.php</file>
+					<file>../core/wp-blog-header.php</file>
+					<file>../core/wp-load.php</file>
 				</whitelist>
 			</filter>
 			<logging>
