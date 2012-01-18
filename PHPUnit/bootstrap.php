@@ -14,15 +14,17 @@
  * @package WordPress
  */
 
+$GLOBALS['unit_testing'] = true;
+ 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'database_name_here');
+define('DB_NAME', 'wordpress_unittest');
 
 /** MySQL database username */
-define('DB_USER', 'username_here');
+define('DB_USER', 'wpuser');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'password_here');
+define('DB_PASSWORD', 'wppass');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -84,7 +86,7 @@ define('WP_DEBUG', true);
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/../core');
+	define('ABSPATH', dirname(__FILE__) . '/../core/');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
